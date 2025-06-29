@@ -13,8 +13,8 @@ export default function Home() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
-            <Header/>
+    <div className="min-h-screen bg-white">
+      <Header />
 
       {loading ? (
         <div className="text-center py-12 text-gray-500">Loading...</div>
