@@ -61,33 +61,7 @@ export default function ArticleView({ article }: ArticleViewProps) {
       </header>
 
       {/* Article Content */}
-      <article className="prose prose-xl max-w-none
-        prose-gray
-        prose-headings:text-gray-900 
-        prose-headings:font-normal
-        prose-headings:font-serif
-        prose-headings:text-3xl
-        prose-h2:text-2xl
-        prose-h3:text-xl
-        prose-p:text-gray-800 
-        prose-p:leading-relaxed
-        prose-p:font-serif
-        prose-p:text-lg
-        prose-a:text-gray-700 
-        prose-a:underline prose-a:decoration-gray-400
-        prose-strong:text-gray-900 
-        prose-code:text-gray-800 
-        prose-code:bg-gray-100 
-        prose-code:font-mono
-        prose-code:text-base
-        prose-pre:bg-gray-100 
-        prose-pre:border prose-pre:border-gray-200
-        prose-pre:text-sm
-        prose-blockquote:border-gray-300 
-        prose-blockquote:text-gray-700
-        prose-blockquote:font-serif
-        prose-blockquote:text-lg
-        prose-li:text-lg"
+      <article style={{fontSize: 20, }}
         dangerouslySetInnerHTML={{ __html: article.content_html }}
       />
     </div>

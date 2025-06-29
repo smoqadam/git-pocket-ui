@@ -30,7 +30,7 @@ export default function Header() {
       <div className="max-w-5xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
         {/* Logo */}
         <div className="text-3xl font-serif text-gray-900">
-          Git Pocket
+          <a href="/">Git Pocket</a>
         </div>
 
         {/* Sync form */}
