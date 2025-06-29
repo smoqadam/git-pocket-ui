@@ -53,10 +53,10 @@ export default function ArticleList() {
           <button
             type="button"
             onClick={() => setSelectedArticle(null)}
-            className="mb-12 inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors font-mono text-sm"
+            className="mb-12 inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors font-mono text-base"
           >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 19l-7-7 7-7" />
+            <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
             </svg>
             Back to list
           </button>
@@ -76,8 +76,8 @@ export default function ArticleList() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-5xl mx-auto">
-        <div className="space-y-1">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
             <article
               key={article.id}
@@ -87,14 +87,25 @@ export default function ArticleList() {
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') setSelectedArticle(article);
               }}
-              className="bg-white border-b border-gray-200 p-6 cursor-pointer hover:bg-gray-100 transition-colors outline-none focus:bg-gray-100"
+              className="bg-white border border-gray-200 p-6 cursor-pointer hover:bg-gray-100 transition-colors outline-none focus:bg-gray-100 h-fit"
             >
-              <h2 className="text-xl font-normal text-gray-900 mb-2 font-serif leading-tight">
+              <h2 className="text-xl font-serif text-gray-900 mb-4 leading-tight line-clamp-3">
                 {article.title}
               </h2>
-              <div className="flex justify-between text-sm text-gray-500 font-mono">
-                <time>{new Date(article.date).toLocaleDateString()}</time>
-                {article.authors.length > 0 && <span>{article.authors[0]}</span>}
+              <div className="space-y-2 text-sm text-gray-600 font-mono">
+                <time className="block">
+                  {new Date(article.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })}
+                </time>
+                {article.authors.length > 0 && (
+                  <div className="text-gray-500">
+                    {article.authors.slice(0, 2).join(', ')}
+                    {article.authors.length > 2 && ` +${article.authors.length - 2} more`}
+                  </div>
+                )}
               </div>
             </article>
           ))}

@@ -29,7 +29,7 @@ export default function Header() {
     <header className="w-full border-b border-gray-200 bg-white p-6">
       <div className="max-w-5xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
         {/* Logo */}
-        <div className="text-2xl font-serif text-gray-900">
+        <div className="text-3xl font-serif text-gray-900">
           Git Pocket
         </div>
 
@@ -40,19 +40,19 @@ export default function Header() {
             placeholder="Repository URL"
             value={repoUrl}
             onChange={(e) => setRepoUrl(e.target.value)}
-            className="w-full md:w-64 px-3 py-2 border border-gray-300 text-sm bg-white text-gray-900 focus:outline-none focus:border-gray-500 font-mono"
+            className="w-full md:w-64 px-4 py-3 border border-gray-300 text-base bg-white text-gray-900 focus:outline-none focus:border-gray-500 font-mono"
           />
           <input
             type="password"
             placeholder="Token (optional)"
             value={token}
             onChange={(e) => setToken(e.target.value)}
-            className="w-full md:w-48 px-3 py-2 border border-gray-300 text-sm bg-white text-gray-900 focus:outline-none focus:border-gray-500 font-mono"
+            className="w-full md:w-48 px-4 py-3 border border-gray-300 text-base bg-white text-gray-900 focus:outline-none focus:border-gray-500 font-mono"
           />
           <button
             onClick={handleSync}
             disabled={loading || !repoUrl}
-            className="px-4 py-2 text-sm bg-gray-900 text-white hover:bg-gray-800 disabled:opacity-50 transition-colors font-mono"
+            className="px-6 py-3 text-base bg-gray-900 text-white hover:bg-gray-800 disabled:opacity-50 transition-colors font-mono"
           >
             {loading ? "Syncing..." : "Sync"}
           </button>
@@ -60,7 +60,7 @@ export default function Header() {
       </div>
       {message && (
         <div className="max-w-5xl mx-auto mt-4">
-          <p className="text-gray-600 text-sm font-mono">{message}</p>
+          <p className="text-gray-600 text-base font-mono">{message}</p>
         </div>
       )}
     </header>
