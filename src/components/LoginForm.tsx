@@ -19,7 +19,7 @@ export default function LoginForm() {
     try {
       await syncArticlesFromGitHub({ repoUrl, token });
 
-      router.refresh();
+      location.reload();
     } catch (err: any) {
       setMessage(err.message || "Sync failed");
     } finally {
