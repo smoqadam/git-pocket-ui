@@ -28,7 +28,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) and connect your Git Pocket repository.
 
-For detailed setup instructions, see [Howto.md](Howto.md).
+For complete setup instructions including backend configuration and multiple ways to save articles, see [Howto.md](Howto.md).
 
 ## 🤝 Contributing
 
