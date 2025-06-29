@@ -26,39 +26,43 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-4">
-      <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
+    <header className="w-full border-b border-gray-200 bg-white p-6">
+      <div className="max-w-5xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-4">
         {/* Logo */}
-        <div className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="text-2xl font-serif text-gray-900">
           Git Pocket
         </div>
 
         {/* Sync form */}
-        <div className="flex flex-wrap items-center gap-2 flex-grow justify-center md:justify-start">
+        <div className="flex flex-wrap items-center gap-3 flex-grow justify-center md:justify-end">
           <input
             type="text"
-            placeholder="Repo URL"
+            placeholder="Repository URL"
             value={repoUrl}
             onChange={(e) => setRepoUrl(e.target.value)}
-            className="w-full md:w-52 px-3 py-1.5 rounded-md border text-sm border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full md:w-64 px-3 py-2 border border-gray-300 text-sm bg-white text-gray-900 focus:outline-none focus:border-gray-500 font-mono"
           />
           <input
             type="password"
             placeholder="Token (optional)"
             value={token}
             onChange={(e) => setToken(e.target.value)}
-            className="w-full md:w-52 px-3 py-1.5 rounded-md border text-sm border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full md:w-48 px-3 py-2 border border-gray-300 text-sm bg-white text-gray-900 focus:outline-none focus:border-gray-500 font-mono"
           />
           <button
             onClick={handleSync}
             disabled={loading || !repoUrl}
-            className="px-4 py-1.5 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+            className="px-4 py-2 text-sm bg-gray-900 text-white hover:bg-gray-800 disabled:opacity-50 transition-colors font-mono"
           >
             {loading ? "Syncing..." : "Sync"}
           </button>
         </div>
-
       </div>
+      {message && (
+        <div className="max-w-5xl mx-auto mt-4">
+          <p className="text-gray-600 text-sm font-mono">{message}</p>
+        </div>
+      )}
     </header>
   );
 }

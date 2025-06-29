@@ -9,27 +9,32 @@ type ArticleViewProps = {
 export default function ArticleView({ article }: ArticleViewProps) {
   if (!article) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white" >
-        <p className="text-red-600" >Back</p>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50" >
+        <p className="text-gray-600" >Back</p>
       </div>
     );
   }
 
   return (
     <article className="prose prose-lg max-w-none
-      prose-neutral 
-      prose-headings:text-neutral-900 
-      prose-headings:font-semibold
-      prose-p:text-neutral-700 
+      prose-gray
+      prose-headings:text-gray-900 
+      prose-headings:font-normal
+      prose-headings:font-serif
+      prose-p:text-gray-800 
       prose-p:leading-relaxed
-      prose-a:text-indigo-600 
-      prose-a:underline prose-a:decoration-indigo-500 prose-a:underline-offset-2
-      prose-strong:text-neutral-900 
-      prose-code:text-neutral-900 
-      prose-code:bg-neutral-100 
-      prose-pre:bg-neutral-100 
-      prose-blockquote:border-neutral-300 
-      prose-blockquote:text-neutral-600 "
+      prose-p:font-serif
+      prose-a:text-gray-700 
+      prose-a:underline prose-a:decoration-gray-400
+      prose-strong:text-gray-900 
+      prose-code:text-gray-800 
+      prose-code:bg-gray-100 
+      prose-code:font-mono
+      prose-pre:bg-gray-100 
+      prose-pre:border prose-pre:border-gray-200
+      prose-blockquote:border-gray-300 
+      prose-blockquote:text-gray-700
+      prose-blockquote:font-serif"
       dangerouslySetInnerHTML={{ __html: article.content_html }}
     />
   );

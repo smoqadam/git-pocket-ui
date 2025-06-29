@@ -13,11 +13,11 @@ export default function Home() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <Header />
 
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading...</div>
+        <div className="text-center py-12 text-gray-600 font-mono">Loading...</div>
       ) : articles && articles.length > 0 ? (
         <ArticleList />
       ) : (
