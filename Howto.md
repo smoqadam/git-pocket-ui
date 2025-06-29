@@ -4,7 +4,7 @@ This guide will help you set up your own personal "Read It Later" service using 
 
 ---
 
-## 🏗️ System Overview
+## System Overview
 
 **Git Pocket** is a privacy-focused reading system with two parts:
 
@@ -20,14 +20,14 @@ This guide will help you set up your own personal "Read It Later" service using 
 
 ---
 
-## 🛠️ Part 1: Backend Setup (Article Saving)
+## Part 1: Backend Setup (Article Saving)
 
 ### Step 1: Create Your Git Pocket Repository
 
 1. Go to [github.com/smoqadam/git-pocket](https://github.com/smoqadam/git-pocket)
-2. Click **"Use this template"** or **Fork** the repository
+2. **Fork** the repository
 3. Name your repository (e.g., `my-git-pocket`)
-4. Make sure it's **public** (required for GitHub Actions)
+
 
 ### Step 2: Create GitHub Personal Access Token
 
@@ -40,13 +40,7 @@ This guide will help you set up your own personal "Read It Later" service using 
 5. Click **"Generate token"**
 6. **Copy and save the token** - you'll need it for saving articles
 
-### Step 3: Enable GitHub Actions
-
-1. Go to your repository → **Actions** tab
-2. If prompted, click **"I understand my workflows, go ahead and enable them"**
-3. GitHub Actions should now be enabled
-
-### Step 4: Test Your Backend
+### Step 3: Test Your Backend
 
 Test that your backend works by running this command (replace the placeholders):
 
@@ -62,7 +56,7 @@ If successful, check your repository - you should see a new commit with updated 
 
 ---
 
-## 📱 Part 2: Saving Articles (Multiple Methods)
+## Part 2: Saving Articles (Multiple Methods)
 
 ### Method 1: Browser Bookmarklet
 
@@ -80,8 +74,7 @@ javascript:(function(){fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_RE
 
 ### Method 2: iOS Shortcut
 
-1. Download the **Shortcuts** app on iOS
-2. Create a new shortcut with these actions:
+1. Create a new shortcut with these actions:
    - **Get Current URL** (from Safari/web page)
    - **Get Contents of URL** with:
      - URL: `https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO/dispatches`
@@ -117,7 +110,7 @@ chmod +x save-article.sh
 
 ---
 
-## 📖 Part 3: Reading Your Articles
+## Part 3: Reading Your Articles
 
 ### Option A: Use the Hosted Frontend
 
@@ -150,46 +143,13 @@ chmod +x save-article.sh
 
 ---
 
-## 🔧 Configuration Tips
-
-### Security Best Practices
-
-- Keep your GitHub token secure and private
-- Consider using GitHub's fine-grained personal access tokens for better security
-- Regularly rotate your access tokens
-
-### Repository Settings
-
-- Your Git Pocket repository must be **public** for GitHub Actions to work
-- The `metadata.json` file will be created automatically on first use
-- Each article is appended to the JSON file with extracted content and metadata
-
-### Troubleshooting
-
-- **Articles not saving**: Check GitHub Actions tab for error logs
-- **Frontend not loading articles**: Verify repository URL and token permissions
-- **Bookmarklet not working**: Ensure you've replaced all placeholders with your actual values
-
----
-
-## 🎯 What You Get
-
-- **Complete Privacy**: All data stored in your own GitHub repository
-- **No Tracking**: No analytics, ads, or third-party services
-- **Offline Reading**: Articles cached locally in your browser
-- **Cross-Platform**: Works on desktop, mobile, and tablets
-- **Portable**: Your data is always accessible via GitHub
-- **Free**: Uses GitHub's free tier for everything
-
----
-
-## 🤝 Contributing
+## Contributing
 
 Found a bug or want to suggest improvements? 
 
 - Backend issues: [git-pocket repository](https://github.com/smoqadam/git-pocket)
 - Frontend issues: [git-pocket-ui repository](https://github.com/smoqadam/git-pocket-ui)
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
